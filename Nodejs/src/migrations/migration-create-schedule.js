@@ -1,6 +1,6 @@
 'use strict';
-/** @type {import('sequelize-cli').Migration} */
-export default  {
+
+module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('schedules', {
       id: {
@@ -26,11 +26,13 @@ export default  {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW
       }
     });
   },
