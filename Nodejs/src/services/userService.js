@@ -64,6 +64,35 @@ let handleUserLogin = async (email, password) => {
     }
 };
 
+let getAllusers = (userId) =>{
+    return new Promise(async (resolve, reject) => {
+        try{
+            let users = '';
+            if(userId === 'All'){
+                users = db.User.findAll({
+                    attributes: {
+                   exclude: ['password']},
+                   raw: true ,
+
+                })
+            }if(userId && userId !== 'All'){
+                users = db.User.findOne({
+                    where: { id: userId },
+                    attributes: {
+                        exclude: ['password']}
+                })
+
+            }
+            resolve(users)
+
+        }catch(e){
+            reject(e);
+        }
+
+})
+}
+
 export default {
     handleUserLogin,
+    getAllusers,
 };

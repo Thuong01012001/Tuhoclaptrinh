@@ -41,6 +41,27 @@ let handleLogin = async (req, res) => {
     }
 };
 
+let handleGetAllusers = async (req,res) =>{
+    let id = req.body.id; // All, Id
+    
+    if(!id){
+        return res.status(400).json({
+            errCode: 1,
+            message: "Missing input parameter",
+            users: []
+    })
+}
+    let users = await userService.getAllusers(id);
+    
+    return res.status(200).json({
+        errCode: 0,
+        errMessage: 'OK',
+        users
+
+    })
+};
+
 export default {
     handleLogin,
+    handleGetAllusers,
 };
