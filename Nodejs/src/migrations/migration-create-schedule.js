@@ -1,5 +1,6 @@
 'use strict';
 
+/** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('schedules', {
@@ -7,36 +8,42 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       currentNumber: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,  // Kiểm tra không để trống
       },
       maxNumber: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,  // Kiểm tra không để trống
       },
-      date : {
-        type: Sequelize.DATE
+      date: {
+        type: Sequelize.DATE,
+        allowNull: false,  // Kiểm tra không để trống
       },
-      timeType : {
-        type: Sequelize.STRING
+      timeType: {
+        type: Sequelize.STRING,
+        allowNull: false,  // Kiểm tra không để trống
       },
-      doctorId : {
-        type: Sequelize.INTEGER
+      doctorId: {
+        type: Sequelize.STRING,
+        allowNull: false,  // Kiểm tra không để trống
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.NOW
+        defaultValue: Sequelize.NOW,
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.NOW
-      }
+        defaultValue: Sequelize.NOW,
+      },
     });
   },
+
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('schedules');
-  }
+  },
 };

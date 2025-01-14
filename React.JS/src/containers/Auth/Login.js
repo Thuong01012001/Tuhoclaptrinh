@@ -10,7 +10,6 @@ import { appStartUpComplete } from './../../store/actions/appActions';
 import {handleLoginApi} from '../../services/userService.js';
 
 
-
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -33,8 +32,6 @@ class Login extends Component {
         })
     }
 
-
-
     handleLogin = async () => {
         // Reset thông báo lỗi trước khi thực hiện login
         this.setState({
@@ -56,14 +53,15 @@ class Login extends Component {
     
             // Nếu đăng nhập thành công (errCode === 0)
             if (data && data.errCode === 0) {
-                // Lưu thông tin người dùng vào state hoặc redux
+     
+                // Lưu thông tin người dùng vào Redux (dispatch action)
                 this.props.userLoginSuccess(data.user);
     
                 // Log kết quả thành công
                 console.log('Login Success:', data);
     
                 // Chuyển hướng người dùng đến trang hệ thống
-                this.redirectToSystemPage();
+                this.redirectToSystemPage('/system/user-manage'); 
             }
     
         } catch (error) {
@@ -81,11 +79,6 @@ class Login extends Component {
         }
     };
     
-    // Hàm chuyển hướng người dùng sau khi login thành công
-    redirectToSystemPage = () => {
-        
-        this.props.history.push('/system/user-manage'); 
-    };
     
     
     
@@ -124,7 +117,7 @@ class Login extends Component {
                                 onChange={(event) => this.handleOnChangePassword(event)}
                                 required
                             />
-                            <spam onClick={()=> this.handleShowPassword() }><i class={this.state.isShowPassWord ? 'fa fa-eye' : 'fa fa-eye-slash'}></i></spam>
+                            <span onClick={()=> this.handleShowPassword() }><i className={this.state.isShowPassWord ? 'fa fa-eye' : 'fa fa-eye-slash'}></i></span>
 
                             </div>
 
@@ -158,16 +151,13 @@ class Login extends Component {
             language: state.app.language,
             userInfo: state.app.userInfo,
         };
-    }
-
+    };
     const mapDispatchToProps = dispatch => {
         return {
-            navigate: (path) => dispatch(push(path)),
-            // userLoginFail: () => dispatch(actions.userLoginFail()),
-            userLoginSuccess: (userInfo) => dispatch(actions.userLoginSuccess(userInfo)),
-        
+          navigate: path => dispatch(push(path)),
+          userLoginFail: () => dispatch(actions.userLoginFail()),
+          userLoginSuccess: userInfo => dispatch(actions.userLoginSuccess(userInfo)),
         };
-   }
-
+      };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

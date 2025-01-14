@@ -12,28 +12,33 @@ module.exports = {
       },
       statusId: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
       doctorId: {
         type: Sequelize.INTEGER,
+        allowNull: false,
       },
       patientId: {
         type: Sequelize.INTEGER,
+        allowNull: false,
       },
       date: {
         type: Sequelize.DATE,
+        allowNull: false,
       },
       timeType: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.NOW
+        defaultValue: Sequelize.NOW,
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.NOW
+        defaultValue: Sequelize.NOW,
       },
     });
   },

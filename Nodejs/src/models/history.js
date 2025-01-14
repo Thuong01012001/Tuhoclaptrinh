@@ -9,22 +9,35 @@ export default (sequelize) => {
      * The `models/index.js` file will call this method automatically.
      */
     static associate(models) {
-      // Define associations here
-      // Example: this.belongsTo(models.User, { foreignKey: 'patientId' });
-      // Example: this.belongsTo(models.Doctor, { foreignKey: 'doctorId' });
+     
+      
     }
   }
 
   History.init(
     {
-      patientId: DataTypes.INTEGER,
-      doctorId: DataTypes.INTEGER,
-      description: DataTypes.TEXT,
-      files: DataTypes.TEXT,
+      patientId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,  // Kiểm tra không để trống
+      },
+      doctorId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,  // Kiểm tra không để trống
+      },
+      description: {
+        type: DataTypes.TEXT,
+        allowNull: true,  // Không bắt buộc
+      },
+      files: {
+        type: DataTypes.TEXT,
+        allowNull: true,  // Không bắt buộc
+      },
     },
     {
       sequelize,
       modelName: 'History',
+      tableName: 'histories',  // Đảm bảo tên bảng trong model giống với migration
+      timestamps: true,  // Tự động thêm createdAt và updatedAt
     }
   );
 

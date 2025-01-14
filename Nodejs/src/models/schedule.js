@@ -9,22 +9,38 @@ export default (sequelize) => {
      * The `models/index.js` file will call this method automatically.
      */
     static associate(models) {
-      // Define associations here
-      // Example: this.belongsTo(models.Doctor, { foreignKey: 'doctorId' });
+    
     }
   }
 
   Schedule.init(
     {
-      currentNumber: DataTypes.INTEGER,
-      maxNumber: DataTypes.INTEGER,
-      date: DataTypes.DATE,
-      timeType: DataTypes.STRING, // Fixed typo: STRNG -> STRING
-      doctorId: DataTypes.STRING, // Fixed typo: dotorId -> doctorId
+      currentNumber: {
+        type: DataTypes.INTEGER,
+        allowNull: false,  // Kiểm tra không để trống
+      },
+      maxNumber: {
+        type: DataTypes.INTEGER,
+        allowNull: false,  // Kiểm tra không để trống
+      },
+      date: {
+        type: DataTypes.DATE,
+        allowNull: false,  // Kiểm tra không để trống
+      },
+      timeType: {
+        type: DataTypes.STRING,
+        allowNull: false,  // Kiểm tra không để trống
+      },
+      doctorId: {
+        type: DataTypes.STRING,
+        allowNull: false,  // Kiểm tra không để trống
+      },
     },
     {
       sequelize,
       modelName: 'Schedule',
+      tableName: 'schedules',  // Đảm bảo tên bảng trong model giống với migration
+      timestamps: true,  // Tự động thêm createdAt và updatedAt
     }
   );
 

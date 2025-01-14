@@ -1,28 +1,44 @@
-'use strict';
-import { Model, DataTypes } from 'sequelize';
+import { DataTypes, Model } from 'sequelize';
 
 export default (sequelize) => {
   class Allcode extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index.js` file will call this method automatically.
-     */
     static associate(models) {
-      // Define associations here
+      // Allcode.hasMany(models.User, {
+      //   foreignKey: 'gender',
+      //   as: 'genderData', // Alias khi dùng include
+      // });
+  
+      // Allcode.hasMany(models.User, {
+      //   foreignKey: 'positionId',
+      //   as: 'positionData',
+      // });
     }
   }
 
   Allcode.init(
     {
-      key: DataTypes.STRING,
-      type: DataTypes.STRING,
-      valueEn: DataTypes.STRING,
-      valueVi: DataTypes.STRING,
+      keyMap: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      type: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      valueEn: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      valueVi: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
     },
     {
       sequelize,
       modelName: 'Allcode',
+      tableName: 'allcodes',
+      timestamps: true,
     }
   );
 

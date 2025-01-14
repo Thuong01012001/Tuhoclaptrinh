@@ -9,27 +9,31 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      key: {
+      keyMap: {
         type: Sequelize.STRING,
-      },
-      valueEn: {
-        type: Sequelize.STRING,
-      },
-      valueVi: {
-        type: Sequelize.STRING,
+        allowNull: false,
       },
       type: {
         type: Sequelize.STRING,
+        allowNull: false,
+      },
+      valueEn: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      valueVi: {
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.NOW
+        defaultValue: Sequelize.NOW,
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.NOW
+        defaultValue: Sequelize.NOW,
       },
     });
   },

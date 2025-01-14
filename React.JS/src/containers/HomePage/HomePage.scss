@@ -1,0 +1,201 @@
+.section-specialty {
+    height: 400px;
+    background: #f5f5f5;
+    border: 1px solid gainsboro;
+    margin-top: 40px;
+  
+    .specialty-container {
+      display: flex;
+      flex-direction: column;
+      margin: 0 50px;
+      
+  
+      .specialty-header {
+        height: 60px;
+        padding-top: 20px;
+        margin-bottom: 20px;
+  
+        .title-section {
+          font-size: 22px;
+          font-weight: 600;
+        }
+  
+        .btn-section {
+          float: right;
+          font-size: 13px;
+          border: none;
+          outline: none;
+          padding: 10px 15px;
+          font-weight: 500;
+          background: #ebebeb;
+          color: black;
+          text-transform: uppercase;
+          transition: background-color 0.3s ease, color 0.3s ease;
+  
+          &:hover {
+            background-color: #f7d800;
+            color: white;
+          }
+        }
+      }
+  
+      .specialty-body {
+        border: none;
+  
+        .specialty-customize {
+          h3 {
+            text-align: center;
+            font-size: 16px;
+            padding-top: 10px;
+          }
+  
+          .outer-bg {
+            border: 1px solid gainsboro;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+  
+            .outanding-doctor-image {
+              width: 120px;
+              height: 120px;
+              border-radius: 50%;
+            }
+          }
+  
+          .bg-image {
+            height: 200px;
+            width: 100%;
+            background-position: center;
+            background-size: cover;
+            background-color: #eee;
+            cursor: pointer;
+  
+            &.specialty-image {
+              background-image: url('../../assets/specialty/co-xuong-khop.jpg');
+            }
+  
+            &.medical-facility-image {
+              background-image: url('../../assets/medicalfacility/co-so-y-te.jpg');
+            }
+  
+            &.outanding-doctor-image {
+              // background-image: url('../../assets/OutandingDoctor/doctor-nurse.jpg');
+            }
+  
+            &.handbook-image {
+              background-image: url('../../assets/HandBook/cam-ngang-suc-khoe.jpg');
+              width: 300px;
+              height: 200px;
+              
+            }
+          }
+        }
+  
+        .container {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 20px;
+          padding: 20px;
+        }
+  
+        .specialty-customize {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          margin: 5px;
+          padding: 10px;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+          &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          }
+  
+          .outer-bg {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+          }
+  
+          .position {
+            font-size: 14px;
+            color: #333;
+  
+            div:first-child {
+              font-weight: bold;
+              margin-bottom: 5px;
+            }
+  
+            div:last-child {
+              color: #777;
+            }
+          }
+        }
+  
+        .slick-prev,
+        .slick-next {
+          border: 2px solid #d7d7d7 !important;
+          height: 40px !important;
+          width: 40px !important;
+          background: #fff !important;
+          z-index: 1000 !important;
+  
+          &:hover {
+            background: #d7d7d7 !important;
+          }
+        }
+  
+        .slick-prev {
+          left: -10px !important;
+        }
+  
+        .slick-next {
+          right: -10px !important;
+        }
+      } .slick-disabled{
+        display: none !important;
+      }
+    }
+  }
+  
+  .home-footer{
+    padding-top: 8px;
+    text-align: center;
+
+    a{
+        text-decoration: unset;
+    }
+  }
+  .section-about{
+    height: 500px !important;
+    padding: 0 70px;
+    margin-top: 40px;
+    border: none;
+    .section-about-header{
+        padding: 20px 10px;
+        font-size: 22px;
+        font-weight: 600;
+    }
+    .section-about-content{
+        display: flex;
+        gap: 20px;
+        width: 100%;
+
+        .content-left{
+            width: 60%;
+        }
+
+        .content-right{
+            width: 40%;
+
+            p{
+                text-align: justify;
+                font-style: italic;
+                padding-top: 15px ;
+            }
+        }
+
+    }
+  }

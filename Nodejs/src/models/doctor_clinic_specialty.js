@@ -9,22 +9,40 @@ export default (sequelize) => {
      * The `models/index.js` file will call this method automatically.
      */
     static associate(models) {
-      // Define associations here
-      // Example: this.belongsTo(models.Doctor, { foreignKey: 'doctorId' });
-      // Example: this.belongsTo(models.Patient, { foreignKey: 'patientId' });
-      // Example: this.belongsTo(models.Specialty, { foreignKey: 'specialtyId' });
+      // Định nghĩa liên kết với model Doctor
+     
     }
   }
 
   Doctor_Clinic_Specialty.init(
     {
-      doctorId: DataTypes.INTEGER,
-      patientId: DataTypes.INTEGER,
-      specialtyId: DataTypes.INTEGER,
+      doctorId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          notEmpty: true,
+        },
+      },
+      clinicId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          notEmpty: true,
+        },
+      },
+      specialtyId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          notEmpty: true,
+        },
+      },
     },
     {
       sequelize,
       modelName: 'Doctor_Clinic_Specialty',
+      tableName: 'doctor_clinic_specialty',
+      timestamps: true,
     }
   );
 

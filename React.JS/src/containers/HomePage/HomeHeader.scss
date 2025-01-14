@@ -1,0 +1,211 @@
+.home-header-container{
+    position: sticky;
+    top: 0; /* Vị trí cố định khi cuộn */
+    z-index: 10000; /* Đảm bảo nó nằm trên các phần tử khác */
+    background-color: #fff; /* Màu nền để không bị che */
+    border-bottom: 1px solid #ccc; /* Đường viền dưới */
+    padding: 10px 20px; /* Khoảng cách bên trong */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng */
+
+   .home-header-content{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    line-height: 1.6;
+
+    .left-content{
+        width: 20%;
+        
+        display: flex;
+        align-items: center;
+        .header-logo{
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+            img{
+                height: 100%;
+                width: 100%;
+                transform: scale(0.5, 0.5);
+            }
+        }
+        i{
+            font-size: 20px;
+            color: gray;
+            cursor: pointer;
+        }
+
+    }
+    .center-content{
+        width: 55%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+        .child-center{
+            .subs-title{
+                font-weight: 400;
+                font-size: 12;
+            }
+        }
+    }
+    .right-content{
+        width: 25%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .support{
+            padding-right: 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            i{
+                font-size: 15px;
+                margin-right: 5px;
+            }
+        }
+
+        .language-vi{
+            cursor: pointer;
+            font-weight: 600;
+            opacity: 0.2;
+            &.active {
+                opacity: 1;
+                span{
+                    color: orange;
+                }
+            }
+            &:hover{
+                opacity: 1;
+                color: orange;
+            }
+
+        }
+
+        .language-en{
+            margin: 0 10px;
+            opacity: 0.2;
+            cursor: pointer;
+            font-weight: 600;
+
+            &.active{
+                opacity: 1;
+                span{
+                    color: blue;
+                }
+            }
+            &:hover{
+                opacity: 1;
+                color: blue;
+            }
+            
+
+        }
+
+    }
+   }
+}
+.home-header-banner{
+    background: url(../../assets/background-header.jpg);
+    height: 485px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    
+    .content-up{
+        background-image: linear-gradient(rgba(126, 126, 126, 0.25), rgba( 255, 255, 255, 0.1) );;
+        
+        height: 65%;
+        padding-top: 15px;
+        
+        .title1{
+            text-align: center;
+            font-size: 30px;
+            text-shadow: 1px 1px 1px #333;
+            margin-bottom: 5px;
+            margin-top: 30px;
+            color: white,
+        }
+        .title2{
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 1px #333;
+            color: white
+            
+        }
+        .search{
+            width: fit-content;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            margin: 0 auto;
+            padding: 10px;
+            border-radius: 25px;
+            background: #f7d800;
+            i{
+                border: none;
+                margin: 0 5px;
+            }
+            input{
+                height: 30px;
+                width: 360px;
+                background: transparent;
+                border: none;
+                outline: none;
+            }
+
+        }
+    };
+    .content-down{
+        background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba( 255, 255, 255, 0.8), rgba( 255, 255, 255, 0.9) );
+        padding: 0 50px;
+        height: 35%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+
+        .options{
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            
+            
+            .option-child{
+                width: 100px;
+              
+                .icon-child{
+                    background: white;
+                    width: 40px;
+                    height: 40px;
+                    padding: 10px;
+                    border-radius: 50%;
+                    text-align: center;
+                    margin: 0 auto;
+
+                    i{
+                        font-size: 20px;
+                        color: #49bce2
+
+                    }
+                }
+                .text-child{
+                    font-size: 17px;
+                    font-weight: 500;
+                    cursor: pointer;
+                    
+                    &:hover{
+                        color: #49bce2
+                    }
+
+                }
+
+            }
+
+        }
+    }
+}
