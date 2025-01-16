@@ -135,7 +135,7 @@ const adminReducer = (state = initialState, action) => {
             copyState.allDoctors =  action.dataDr; // Chu y ykhi update du lieu dong khong duoc noi mang se lam sai
             return { ...copyState };
         }
-        case actionTypes.FETCH_TALL_DOCTORS_FAIL: {
+        case actionTypes.FETCH_ALL_DOCTORS_FAIL: {
             let copyState = { ...state };
             copyState.allDoctors = [];
             return { ...copyState };

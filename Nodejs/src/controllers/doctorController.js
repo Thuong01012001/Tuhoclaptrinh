@@ -57,9 +57,11 @@ let getDetailDoctorById = async(req,res) =>{
         })
     }
 }
+
 export default {
     getTopDoctorHome,
     getAllDoctors,
     postInforDoctors,
-    getDetailDoctorById
+    getDetailDoctorById,
+ 
 };

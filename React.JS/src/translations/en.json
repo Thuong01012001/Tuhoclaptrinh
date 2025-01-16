@@ -36,6 +36,11 @@
             "specialty": "Specialties",
             "manage-handbook": "Manage handbook",
             "handbook": "Handbook"
+        },
+
+        
+        "doctor":{
+            "manage-schedule": "Manage Doctor's schedule"
         }
     },
     "manage-user": {
@@ -61,6 +66,12 @@
     "homepage" : {
         "outstanding-doctor": " Outstanding Doctors",
         "see-more": "See more"
+    },
+    
+    "manage-schedule": {
+        "title": "Manage doctor's appointment schedule"
     }
+    
+    
 }
     

@@ -1,5 +1,7 @@
 import actionTypes from './actionTypes';
-import { getAllCodeService, createNewUserService, getAllUsers, deleteUserService, editUserService, getTopDoctorHomeService, getAllDoctors,saveDetailDoctor } from '../../services/userService';
+import { getAllCodeService, createNewUserService, getAllUsers,
+     deleteUserService, editUserService, getTopDoctorHomeService, 
+     getAllDoctors,saveDetailDoctor } from '../../services/userService';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 
@@ -176,7 +178,7 @@ export const editAUser = (data) => {
                 dispatch(editUserSuccess());
                 dispatch(fetchAllUsersStart());
             }else{
-                toast.error('Delete the user error!');
+                toast.error('Edit the user error!');
                 dispatch(editUserFail());
             }
         }catch(e){
@@ -192,7 +194,6 @@ export const editUserSuccess = () => ({
 export const editUserFail = () => ({
     type: actionTypes.EDIT_USER_FAIL,
 })
-
 
 export const fetchTopDoctor = () =>{
     return async (dispatch, getState) => {
@@ -242,6 +243,7 @@ export const fetchAllDoctor = () =>{
 
 }
 
+
 export const saveDetailDoctors = (data) =>{
     return async (dispatch, getState) => {
         try{
@@ -269,3 +271,26 @@ export const saveDetailDoctors = (data) =>{
 
 }
 
+export const fetchAllScheduleTime = () =>{
+    return async (dispatch, getState) => {
+        try{
+            let res = await getAllCodeService('TIME');
+            if(res && res.errCode === 0){
+                dispatch({
+                    type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_SUCCESS,
+                    dataTime: res.data,
+                })
+            }else{
+                dispatch({
+                    type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_FAIL,
+                })
+            }
+        }catch(e){
+            console.log('FETCH_ALLCODE_SCHEDULE_TIME_FAIL: ', e)
+            dispatch({
+                type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_FAIL,
+            })
+        }
+    }
+
+}

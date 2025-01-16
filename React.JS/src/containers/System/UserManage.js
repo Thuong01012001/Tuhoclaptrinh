@@ -14,7 +14,7 @@ class UserManage extends Component {
             arrUsers: [],
             isOpenModalUser: false,
             isOpenModalEditUser: false,
-            useEdi: {}
+            useEdit: {}
         };
     }
 

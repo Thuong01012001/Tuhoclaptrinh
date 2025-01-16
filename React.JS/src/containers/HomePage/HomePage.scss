@@ -50,14 +50,13 @@
           }
   
           .outer-bg {
-            border: 1px solid gainsboro;
             padding: 10px 0;
             display: flex;
             justify-content: center;
   
             .outanding-doctor-image {
-              width: 120px;
-              height: 120px;
+              width: 150px;
+              height: 150px;
               border-radius: 50%;
             }
           }
@@ -149,10 +148,13 @@
   
         .slick-prev {
           left: -10px !important;
+          border-radius: 5px;
         }
   
         .slick-next {
           right: -10px !important;
+          border-radius: 5px;
+
         }
       } .slick-disabled{
         display: none !important;
@@ -199,3 +201,16 @@
 
     }
   }
+  .bg-outanding{
+    background-image: url(../../assets/OutandingDoctor/bac-si-noi-bat.png) !important;
+  }
+  .slick-next:before {
+    content: '→';
+    color: rgb(56, 152, 163);
+
+}
+.slick-prev:before {
+  content: '←';
+  color: rgb(56, 152, 163);
+
+}

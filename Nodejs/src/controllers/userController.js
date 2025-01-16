@@ -91,6 +91,7 @@ let handleDeleteUser = async (req, res) => {
 
 let handleEditUser = async (req, res) => {
     try {
+        console.log(req.body);
         let data = req.body; // Nhận dữ liệu từ request body
         let message = await userService.updateUserData(data); // Gọi hàm editUser từ service
 

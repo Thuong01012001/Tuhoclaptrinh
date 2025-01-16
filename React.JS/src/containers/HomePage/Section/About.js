@@ -20,16 +20,18 @@ class About extends Component {
                 </div>
                  <div className='section-about-content'>
                     <div className='content-left'>
-                    <iframe
-                        width="100%"
+                    
+                    <iframe                      
+                         width="100%"
                         height="400px"
-                        src="https://www.youtube.com/embed/zl1CgOgb1DA"
-                        title="Âm nhạc ban đêm cho công việc — Bản phối nhạc trong nhà để xe tương lai sâu sắc để tập trung"
+                        src="https://www.youtube.com/embed/9cQE4if-U78"
+                        title="Mây x Gió (Mashup) JanK ft. Sỹ Tây x Quanvrox「Lofi Ver.」/ 1 Hour Lyrics Video"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen></iframe>
-
+                        allowFullScreen
+                    ></iframe>
+                   
                     </div>
                     <div className='content-right'>
                         <p>

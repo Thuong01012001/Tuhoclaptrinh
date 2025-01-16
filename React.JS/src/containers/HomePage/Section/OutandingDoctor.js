@@ -48,8 +48,8 @@ class OutandingDoctor extends Component {
 
         return (
 
-            <div className='section-specialty'>
-                <div className='specialty-container bg-outanding'>
+            <div className='section-specialty bg-outanding' >
+                <div className='specialty-container'>
                     <div className='specialty-header'>
                         <span className='title-section'><FormattedMessage id='homepage.outstanding-doctor' defaultMessage='Bác sĩ nổi bật tuần qua' /></span>
                         <button className='btn-section'><FormattedMessage id='homepage.see-more' defaultMessage='Xem thêm' /></button>
