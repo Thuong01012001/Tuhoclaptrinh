@@ -10,6 +10,7 @@ const initialState = {
     users: [],
     topDoctors: [],
     allDoctors: [],
+    allScheduleTime: [],
 };
 
 const adminReducer = (state = initialState, action) => {
@@ -138,6 +139,16 @@ const adminReducer = (state = initialState, action) => {
         case actionTypes.FETCH_ALL_DOCTORS_FAIL: {
             let copyState = { ...state };
             copyState.allDoctors = [];
+            return { ...copyState };
+        }
+        case actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_SUCCESS: {
+            let copyState = { ...state };
+            copyState.allScheduleTime =  action.dataTime; // Chu y ykhi update du lieu dong khong duoc noi mang se lam sai
+            return { ...copyState };
+        }
+        case actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_FAIL: {
+            let copyState = { ...state };
+            copyState.allScheduleTime = [];
             return { ...copyState };
         }
 

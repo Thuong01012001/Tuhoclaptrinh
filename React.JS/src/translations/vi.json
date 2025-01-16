@@ -69,6 +69,19 @@
     },
 
     "manage-schedule": {
-        "title": "Quản lí kế hoạch khám bệnh của bác sĩ"
+        "title": "Quản lí kế hoạch khám bệnh của bác sĩ",
+        "choose-doctor": "Chọn bác sĩ",
+        "choose-date": "Chọn ngày",
+        "choose-save": "Lưu thông tin"
+    },
+
+    "login": {
+        "title": "Đăng nhập",
+        "username": "Tên đăng nhập",
+        "password": "Mật khẩu",
+        "forgot-password": "Quên mật khẩu?",
+        "other-login-with": "Đăng nhập với:",
+        "support": "Hỗ trợ"
     }
+
 }

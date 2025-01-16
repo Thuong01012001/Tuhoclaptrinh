@@ -243,7 +243,6 @@ export const fetchAllDoctor = () =>{
 
 }
 
-
 export const saveDetailDoctors = (data) =>{
     return async (dispatch, getState) => {
         try{
@@ -271,7 +270,7 @@ export const saveDetailDoctors = (data) =>{
 
 }
 
-export const fetchAllScheduleTime = () =>{
+export const fetchAllScheduleTime = (type) =>{
     return async (dispatch, getState) => {
         try{
             let res = await getAllCodeService('TIME');

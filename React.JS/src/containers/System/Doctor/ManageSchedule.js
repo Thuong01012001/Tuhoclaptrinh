@@ -15,11 +15,13 @@ class ManageSchedule extends Component {
             listDoctors: [],
             selectedDoctor: {},
             currentDate: '',
+            rangeTime: '',
 
         }
     }
     componentDidMount(){
         this.props.fetchAllDoctor();
+        this.props.fetchAllScheduleTime();
     }
     componentDidUpdate(prevProps) {
         if (prevProps.allDoctors !== this.props.allDoctors) {
@@ -27,6 +29,11 @@ class ManageSchedule extends Component {
             this.setState({
                 listDoctors: dataSelect,
             });
+        }
+        if(prevProps.allScheduleTime !== this.props.allScheduleTime){
+            this.setState({
+                rangeTime: this.props.allScheduleTime
+            })
         }
     
         if (prevProps.language !== this.props.language) {
@@ -65,7 +72,9 @@ class ManageSchedule extends Component {
     }
     
     render() {
-          console.log('hoi dan it', this.state)
+         console.log('hoi dan it check state', this.state);
+        let {rangeTime} = this.state;
+        let {language} = this.props;
         return (
             <React.Fragment>
                 <div className='manage-schedule-container'>
@@ -75,7 +84,7 @@ class ManageSchedule extends Component {
                     <div className='container'>
                         <div className='row'>
                             <div className='col-6 form-group'>
-                                <label>Chọn bác sĩ</label>
+                                <label><FormattedMessage id="manage-schedule.choose-doctor"/></label>
                                 <Select
                                 value={this.state.selectedDoctor}
                                 onChange={this.handleChange}
@@ -83,7 +92,7 @@ class ManageSchedule extends Component {
                         />
                             </div>
                             <div className='col-6 form-group'>
-                                <label>Chọn ngày</label>
+                                <label><FormattedMessage id="manage-schedule.choose-date"/></label>
                                 <DataPicker
                                 onChange={this.handleOnchangeDatePicker}
                                 className="form-control"
@@ -91,10 +100,19 @@ class ManageSchedule extends Component {
                                 minDate={new Date()}
                                 />
                             </div>
-                            <div className='col-12 pick-hour-control'>
-                               
+                            <div className='col-12 pick-hour-container'>
+                               {rangeTime && rangeTime.length && 
+                               rangeTime.map((item, index)=>{
+                                return (
+                                    <button className="btn btn-schedule" key="index">{language === LANGUAGES.VI ? 
+                                        item.valueVi : item.valueEn}</button>
+                                )
+                               })
+                               }
                             </div>
-                            <button className='btn btn-primary'>Lưu thông tin</button>
+                            <div className='col-12'>
+                               <button className='btn btn-primary btn-save-schedule'><FormattedMessage id="manage-schedule.choose-save"/></button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -108,12 +126,15 @@ const mapStateToProps = state => {
         isLoggedIn: state.user.isLoggedIn,
         language: state.app.language,
         allDoctors: state.admin.allDoctors,
+        allScheduleTime: state.admin.allScheduleTime,
+
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
         fetchAllDoctor: () => dispatch(actions.fetchAllDoctor()),
+        fetchAllScheduleTime: () => dispatch(actions.fetchAllScheduleTime()),
     };
 };
 

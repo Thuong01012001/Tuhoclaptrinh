@@ -87,6 +87,61 @@
                     cursor: pointer;
             }
         }
-     }
+    }
+     .right-content{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 20px;
+
+        .support{
+            padding-right: 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            i{
+                font-size: 15px;
+                margin-right: 5px;
+            }
+        }
+
+        .language-vi{
+            cursor: pointer;
+            font-weight: 600;
+            opacity: 0.2;
+            &.active {
+                opacity: 1;
+                span{
+                    color: black;
+                }
+            }
+            &:hover{
+                opacity: 1;
+                color: blue;
+            }
+
+        }
+
+        .language-en{
+            margin: 0 10px;
+            opacity: 0.2;
+            cursor: pointer;
+            font-weight: 600;
+            &.active{
+                opacity: 1;
+                span{
+                    color: white;
+                }
+            }
+            &:hover{
+                opacity: 1;
+                color: white;
+            }
+            
+
+        }
+
+    }
     
 }

@@ -69,9 +69,20 @@
     },
     
     "manage-schedule": {
-        "title": "Manage doctor's appointment schedule"
-    }
+        "title": "Manage doctor's appointment schedule",
+        "choose-doctor": "Choose a doctor",
+        "choose-date": "Choose a date",
+        "choose-save": "Save Infor"
+    },
     
+    "login": {
+        "title": "Login",
+        "username": "Username",
+        "password": "Password",
+        "forgot-password": "Forgot password?",
+        "other-login-with": "Other login with:",
+        "support": "Support"
+    }
     
 }
     
